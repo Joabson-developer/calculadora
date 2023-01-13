@@ -1,0 +1,5 @@
+.l-main {
+  @include d-grid-center;
+  min-height: 100vh;
+  color: get-color("white");
+}

@@ -1,0 +1,49 @@
+.c-button {
+  @include d-grid-center;
+  @include shadow("sm");
+
+  border-radius: to-rem(4px);
+  border: none;
+  color: get-color("white");
+  min-height: to-rem(12px);
+  min-width: 100%;
+  padding-block: to-rem(4px);
+  transition: all 100ms ease-in-out;
+
+  &__color {
+    &--green {
+      background-color: get-color("cyan");
+    }
+    &--yellow {
+      aspect-ratio: 3/1;
+      background-color: get-color("dandelion");
+      border-radius: to-rem(12px);
+    }
+    &--black {
+      aspect-ratio: 5/3;
+      background-color: get-color("black-700");
+    }
+  }
+
+  &__font {
+    font-size: to-rem(12px);
+
+    &--sm {
+      font-size: inherit;
+    }
+
+    &--md {
+      font-size: to-rem(20px);
+    }
+  }
+
+  &--rounded {
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+
+  &:active {
+    @include shadow("md");
+    scale: 0.95;
+  }
+}

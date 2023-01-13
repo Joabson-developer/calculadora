@@ -1,0 +1,9 @@
+.c-display {
+  background-color: get-color("gunsmoke");
+  font-family: "DS-Digital";
+  font-size: to-rem(36px);
+  grid-column: 1 / span 4;
+  min-height: to-rem(36px);
+  text-align: end;
+  padding-inline: to-rem(8px);
+}

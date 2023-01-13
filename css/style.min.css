@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "DS-Digital";
+  src: url("/fonts/DS-Digital.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #333333;
+}
+
+.l-main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  color: #ffffff;
+}
+
+.l-calc {
+  display: grid;
+  max-width: 18.75rem;
+  width: 100%;
+  gap: 1rem;
+  background: #3c3b41;
+  padding: 3rem 1.5rem;
+  border-radius: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.75);
+}
+.l-calc .c-display {
+  grid-column: 1/span 4;
+  margin-bottom: 2rem;
+}
+.l-calc__wrapper-button {
+  display: grid;
+  place-items: center;
+}
+.l-calc__on-ce {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.l-calc__on-ce :nth-child(1) {
+  border-bottom: 1px solid #ffffff;
+}
+.l-calc__on-ce :nth-child(2) {
+  margin-top: -0.625rem;
+}
+.l-calc__button-large {
+  grid-column: 4/span 1;
+  grid-row: 6/span 2;
+}
+
+.c-display {
+  background-color: #858d76;
+  font-family: "DS-Digital";
+  font-size: 2.25rem;
+  grid-column: 1/span 4;
+  min-height: 2.25rem;
+  text-align: end;
+  padding-inline: 0.5rem;
+}
+
+.c-button {
+  display: grid;
+  place-items: center;
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 0.25rem;
+  border: none;
+  color: #ffffff;
+  min-height: 0.75rem;
+  min-width: 100%;
+  padding-block: 0.25rem;
+  transition: all 100ms ease-in-out;
+}
+.c-button__color--green {
+  background-color: #28d2e1;
+}
+.c-button__color--yellow {
+  aspect-ratio: 3/1;
+  background-color: #fae081;
+  border-radius: 0.75rem;
+}
+.c-button__color--black {
+  aspect-ratio: 5/3;
+  background-color: #3c3b41;
+}
+.c-button__font {
+  font-size: 0.75rem;
+}
+.c-button__font--sm {
+  font-size: inherit;
+}
+.c-button__font--md {
+  font-size: 1.25rem;
+}
+.c-button--rounded {
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.c-button:active {
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  scale: 0.95;
+}
+
+/*# sourceMappingURL=style.min.css.map */

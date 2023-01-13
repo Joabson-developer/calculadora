@@ -1,0 +1,17 @@
+@import "functions/get-color";
+
+$colors: (
+  "white": #ffffff,
+  "black-900": #000000,
+  "black-800": #333333,
+  "black-700": #3c3b41,
+  "cyan": #28d2e1,
+  "dandelion": #fae081,
+  "gunsmoke": #858d76,
+);
+
+$shadow: (
+  "sm": 0px 0px 4px 0px rgba(get-color("black-900"), 0.75),
+  "md": 0px 0px 8px 0px rgba(get-color("black-900"), 0.75),
+  "lg": 0px 0px 16px 0px rgba(get-color("black-900"), 0.75),
+);

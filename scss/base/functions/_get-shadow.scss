@@ -1,0 +1,5 @@
+@use "sass:map";
+
+@function get-shadow($size) {
+  @return map.get($shadow, $size);
+}

@@ -1,0 +1,42 @@
+.l-calc {
+  display: grid;
+  max-width: to-rem(300px);
+  width: 100%;
+  gap: to-rem(16px);
+  background: get-color("black-700");
+  padding: to-rem(48px) to-rem(24px);
+  border-radius: to-rem(24px);
+
+  grid-template-columns: repeat(4, 1fr);
+
+  @include shadow("lg");
+
+  .c-display {
+    grid-column: 1 / span 4;
+    margin-bottom: to-rem(32px);
+  }
+
+  &__wrapper-button {
+    @include d-grid-center;
+  }
+
+  &__on-ce {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    :nth-child(1) {
+      border-bottom: 1px solid get-color("white");
+    }
+
+    :nth-child(2) {
+      margin-top: to-rem(-10px);
+    }
+  }
+
+  &__button-large {
+    grid-column: 4 / span 1;
+    grid-row: 6 / span 2;
+  }
+}

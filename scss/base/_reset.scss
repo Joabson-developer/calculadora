@@ -1,0 +1,17 @@
+@import "variables";
+
+@font-face {
+  font-family: "DS-Digital";
+  src: url("/fonts/DS-Digital.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: get-color("black-800");
+}

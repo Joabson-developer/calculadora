@@ -1,0 +1,5 @@
+@mixin shadow($size) {
+  -webkit-box-shadow: get-shadow($size);
+  -moz-box-shadow: get-shadow($size);
+  box-shadow: get-shadow($size);
+}
