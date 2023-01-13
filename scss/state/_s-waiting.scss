@@ -1,0 +1,12 @@
+.s-waiting {
+  animation: blink 800ms ease infinite;
+}
+
+@keyframes blink {
+  from {
+    color: initial;
+  }
+  to {
+    color: transparent;
+  }
+}

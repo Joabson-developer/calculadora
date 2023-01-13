@@ -1,6 +1,9 @@
-import { ZERO, NUMBERS, OFF, ONCE, DOT } from "./digits.js";
+import { ZERO, NUMBERS, OFF, ONCE, DOT, ADDITION } from "./digits.js";
 
 export default (display, elements) => {
+  const storage = [];
+  let waiting = false;
+
   const on = () => {
     display.value = "0";
   };
@@ -26,6 +29,13 @@ export default (display, elements) => {
       display.value === ZERO
         ? (display.value = digit)
         : (display.value += digit);
+    }
+
+    // operations
+    if (digit === ADDITION) {
+      storage.push(display.value);
+
+      console.log(storage);
     }
   };
 

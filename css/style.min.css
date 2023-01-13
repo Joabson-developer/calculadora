@@ -114,4 +114,17 @@ body {
   scale: 0.95;
 }
 
+.s-waiting {
+  animation: blink 800ms ease infinite;
+}
+
+@keyframes blink {
+  from {
+    color: initial;
+  }
+  to {
+    color: transparent;
+  }
+}
+
 /*# sourceMappingURL=style.min.css.map */

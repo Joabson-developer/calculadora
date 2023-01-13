@@ -4,4 +4,19 @@ const DOT = ".";
 const ONCE = "on-ce";
 const OFF = "off";
 
-export { ZERO, NUMBERS, DOT, ONCE, OFF };
+const ADDITION = "+";
+const SUBTRACTION = "-";
+const MULTIPLICATION = "*";
+const DIVISION = "/";
+
+export {
+  ZERO,
+  NUMBERS,
+  DOT,
+  ONCE,
+  OFF,
+  ADDITION,
+  SUBTRACTION,
+  MULTIPLICATION,
+  DIVISION,
+};
