@@ -1,8 +1,11 @@
 import { ZERO, NUMBERS, OFF, ONCE, DOT, ADDITION } from "./digits.js";
 
+Array.prototype.lastItem = function () {
+  return [...this].pop();
+};
+
 export default (display, elements) => {
   const storage = [];
-  let waiting = false;
 
   const on = () => {
     display.value = "0";
@@ -10,6 +13,17 @@ export default (display, elements) => {
 
   const off = () => {
     display.value = "";
+  };
+
+  const operation = (callback) => {
+    const lastNumber = +storage.lastItem() || 0;
+    storage.push(display.value);
+    const currentNumber = +storage.lastItem();
+
+    display.classList.add("is-working");
+
+    display.value = callback(lastNumber, currentNumber);
+    storage.push(display.value);
   };
 
   const controls = ({ currentTarget }) => {
@@ -26,17 +40,17 @@ export default (display, elements) => {
     if (digit === DOT && !thereIsADotOnTheDisplay) display.value += digit;
 
     if (NUMBERS.includes(digit)) {
-      display.value === ZERO
-        ? (display.value = digit)
-        : (display.value += digit);
+      if (display.value === ZERO || display.classList.contains("is-working")) {
+        display.classList.remove("is-working");
+        display.value = digit;
+      } else {
+        display.value += digit;
+      }
     }
 
     // operations
-    if (digit === ADDITION) {
-      storage.push(display.value);
-
-      console.log(storage);
-    }
+    if (digit === ADDITION)
+      operation((lastNumber, currentNumber) => lastNumber + currentNumber);
   };
 
   elements.forEach((element) => element.addEventListener("click", controls));

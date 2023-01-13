@@ -114,16 +114,16 @@ body {
   scale: 0.95;
 }
 
-.s-waiting {
-  animation: blink 800ms ease infinite;
+.is-working {
+  animation: blink 800ms ease;
 }
 
 @keyframes blink {
   from {
-    color: initial;
+    color: transparent;
   }
   to {
-    color: transparent;
+    color: initial;
   }
 }
 

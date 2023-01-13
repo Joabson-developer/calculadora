@@ -1,0 +1,12 @@
+.is-working {
+  animation: blink 800ms ease;
+}
+
+@keyframes blink {
+  from {
+    color: transparent;
+  }
+  to {
+    color: initial;
+  }
+}
