@@ -4,14 +4,15 @@
   "description": "",
   "main": "js/script.js",
   "scripts": {
-    "sass": "sass --watch scss/style.scss:css/style.min.css"
+    "sass": "sass --watch scss/style.scss:css/style.min.css",
+    "sass:min": "sass --watch scss/style.scss:css/style.min.css --style compressed"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Joabson-developer/calculadora.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Joabson Silva",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Joabson-developer/calculadora/issues"

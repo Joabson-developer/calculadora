@@ -1,4 +1,12 @@
-import { ZERO, NUMBERS, OFF, ONCE, DOT, ADDITION } from "./digits.js";
+import {
+  ZERO,
+  NUMBERS,
+  OFF,
+  ONCE,
+  DOT,
+  ADDITION,
+  SUBTRACTION,
+} from "./digits.js";
 
 Array.prototype.lastItem = function () {
   return [...this].pop();
@@ -9,21 +17,27 @@ export default (display, elements) => {
 
   const on = () => {
     display.value = "0";
+    storage.length = 0;
   };
 
   const off = () => {
     display.value = "";
+    storage.length = 0;
   };
 
-  const operation = (callback) => {
-    const lastNumber = +storage.lastItem() || 0;
-    storage.push(display.value);
-    const currentNumber = +storage.lastItem();
-
+  const calc = (callback) => {
     display.classList.add("is-working");
 
-    display.value = callback(lastNumber, currentNumber);
-    storage.push(display.value);
+    const lastNumber = +storage.lastItem() || 0;
+    storage.push(+display.value);
+    const currentNumber = storage.lastItem();
+
+    if (lastNumber !== 0) {
+      display.value = callback(lastNumber, currentNumber);
+      storage.push(+display.value);
+    }
+
+    console.log(storage);
   };
 
   const controls = ({ currentTarget }) => {
@@ -50,7 +64,10 @@ export default (display, elements) => {
 
     // operations
     if (digit === ADDITION)
-      operation((lastNumber, currentNumber) => lastNumber + currentNumber);
+      calc((lastNumber, currentNumber) => lastNumber + currentNumber);
+
+    if (digit === SUBTRACTION)
+      calc((lastNumber, currentNumber) => lastNumber - currentNumber);
   };
 
   elements.forEach((element) => element.addEventListener("click", controls));
